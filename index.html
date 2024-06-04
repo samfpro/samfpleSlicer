@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><b>samFPle slicer</b></title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container shadow">
+        <div class="title">samFPle slicer</div>
+        <input type="file" id="fileInput" multiple accept=".mp3, .wav" class= "button">
+        <label for="sliceDuration">Slice Duration (seconds):</label>
+        <div class= "sub-container-row">
+<div class= "knob-outer outset">
+<div class="knob" id="sliceDurationKnob">
+            <div class="marker" id="sliceDurationMarker"></div>
+        </div></div>
+        <input type="text" id="sliceDuration" class="inset textbox" readonly>
+        </div>
+        <label for="maxSlices"> Max Slices Per Song (0 = all):</label>
+       <div class= "sub-container-row">
+<div class= "knob-outer outset">
+<div class="knob" id="maxSlicesKnob">
+            <div class="marker" id="maxSlicesMarker"></div>
+        </div></div>
+        <input type="text" id="maxSlices" class="inset textbox" readonly>
+        </div>
+        <label for="initOffset">Initial Offset (seconds):</label>
+       <div class= "sub-container-row">
+<div class= "knob-outer outset">
+<div class="knob" id="initOffsetKnob">
+            <div class="marker" id="initOffsetMarker"></div>
+        </div></div>
+        <input type="text" id="initOffset" class="inset textbox" readonly>
+        </div>
+        <label for="projectName">Project Name (.zip)</label><input type="text" id="projectName" class="inset textbox">
+        <button id="sliceButton" class= "shadow outset">Slice and Download</button>
+         <div id="consoleLog" class= "inset">starting console..</div>
+          <div>&#169; 2024 samFPro Software</div>
+        <!-- Screw corners in all four corners -->
+        <div class="screw shadow outset top-left">
+            <div class="cross"></div>
+        </div>
+        <div class="screw shadow outset top-right">
+            <div class="cross"></div>
+        </div>
+        <div class="screw shadow outset bottom-left">
+            <div class="cross"></div>
+        </div>
+        <div class="screw shadow outset bottom-right">
+            <div class="cross"></div>
+        </div>
+        
+    </div>
+    <script src="consoleLogger.js"></script>   
+    <script src="knob.js"></script>   
+    <script src="jszip.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

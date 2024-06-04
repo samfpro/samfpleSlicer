@@ -1,0 +1,256 @@
+body {
+    background-color: #1e1e1e;
+    font-family: Monaco, monospace;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+font-size: 10px;
+}
+
+#consoleLog {
+  max-height: 100px;
+  overflow-y: auto;
+  background-color: color: #333333;;
+}
+
+.inset{
+  border-bottom-color: white;
+  border-left-color: white;
+  border-top-color: black;
+  border-right-color: black;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.outset{
+border-bottom-color: black;
+  border-left-color: black;
+  border-top-color: white;
+  border-right-color: white;
+  border-style: solid;
+  border-width: 2px;
+
+}
+
+.log-entry {
+  padding: 5px;
+  margin-bottom: 5px;
+  color: #DDDD88;
+}
+
+.log-entry.log {
+  background-color: color: #333333;
+}
+
+.log-entry.error {
+  background-color: red;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+    margin: 50px;
+    padding: 20px;
+    text-shadow: 1px -1px 0 #000; 
+    position: relative;
+
+    background: linear-gradient(to bottom, #444444, #999999);
+    /* For older browsers */
+    background: -webkit-linear-gradient(top, #444444, #999999);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -moz-linear-gradient(top, #444444, #999999);
+    /* Firefox 3.6-15 */
+    background: -o-linear-gradient(top, #444444, #999999);
+    /* Opera 11.10-12.00 */
+    background: -ms-linear-gradient(top, #444444, #999999);
+    /* IE 10 */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative; 
+    border-width: 2px;
+    border-style: solid;
+    border-right-color: white;
+    border-top-color: white;
+    border-bottom-color: black;
+    border-left-color: black;
+/* Ensures screw corners are positioned relative to the container */
+}
+
+input[type="number"],
+button {
+    margin-top: 10px;
+    padding: 8px;
+    border: none;
+    background-color: #444;
+    color: #ffffff;
+
+}
+
+input[type="number"] {
+    width: 50px;
+    padding: 5px;
+}
+
+button {
+    width: 100%;
+    background-color: #007bff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Screw corners styling */
+.screw {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #808080 0%, #f0f0f0 70%);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.top-left {
+    top: 10px;
+    left: 10px;
+}
+
+.top-right {
+    top: 10px;
+    right: 10px;
+}
+
+.bottom-left {
+    bottom: 10px;
+    left: 10px;
+}
+
+.sub-container-row{
+  display: flex;
+  flex-direction: row;
+}
+
+.bottom-right {
+    bottom: 10px;
+    right: 10px;
+}
+
+/* Cross styling */
+.cross {
+    position: absolute;
+    top: 50%;
+    right: 45%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 40%;
+}
+
+.cross::before,
+.cross::after {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 2px;
+    background-color: black;
+}
+
+.cross::before {
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.cross::after {
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+/* Duration box styling */
+.duration-box {
+    position: relative;
+    display: inline-block;
+}
+
+.duration-box input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    border: none;
+    background-color: #444;
+    color: #ffffff;
+}
+
+.lcd-display {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0f0;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.knob {
+    width: 40px;
+    height: 40px;
+    background-color: #ccc;
+    border-radius: 50%;
+    position: relative;
+    left: 0px;
+    top: 0px;
+}
+
+.knob-outer {
+    width:40px;
+    height: 40px;
+    background-color: black;
+    border-radius: 50%;
+    position: relative;
+}
+
+.marker {
+    width: 5px;
+    height: 5px;
+    background-color: #333;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px; /* Adjusted position to start at the top */
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    z-index: 1; /* Ensure it's above the knob */
+}
+
+.textbox {
+  background-color: black;
+  color: green;
+  padding: 5px;
+  margin: 10px;
+}
+
+.shadow {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+}
+
+.title {
+    font-size: 14px;
+    display: inline-block;
+    position: relative;
+}
+
+.title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: 200px;
+    height: 100%;
+    background-color: black;
+    z-index: -1;
+}
+
